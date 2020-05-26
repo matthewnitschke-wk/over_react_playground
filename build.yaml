@@ -1,0 +1,16 @@
+targets:
+  $default:
+    builders:
+      built_value_generator:built_value:
+        generate_for:
+          include:
+            - "lib/**.sg.dart"
+      build_web_compilers|entrypoint:
+        generate_for:
+          include:
+            - "web/main.dart"
+        release_options:
+          dart2js_args:
+          - -O3
+          - --csp
+          - --no-minify
